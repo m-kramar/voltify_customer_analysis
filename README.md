@@ -78,7 +78,7 @@ Our data shows that high-priced products tend to have higher return rates across
 
 The primary working hypothesis is that expensive purchases trigger regret in some customers, prompting returns. One potential countermeasure is offering an installment payment program, which could reduce perceived financial risk and lower return rates for high-ticket items.
 
-Our main focus should be on reducing the return rate among new customers, because, as we see, most of the cost of returns corresponds to this cohort (due to higher order volumes and, in some cases, higher return rates). Specifically, we should focus on MacBook Air laptops and gaming monitors.”
+Our main focus should be on reducing the return rate among new customers, because, as we see, most of the cost of returns corresponds to this cohort (due to higher order volumes and, in some cases, higher return rates). Specifically, we should focus on MacBook Air laptops and gaming monitors.
 
 #### <ins>Key recommendations</ins>:
 • **Laptop Return Reduction**: for both laptops (highest return categories) offer pre-purchase comparison guides, live demos, and extended trial options to better align expectations with product experience.<br><br>
