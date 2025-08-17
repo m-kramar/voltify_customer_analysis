@@ -1,6 +1,9 @@
 # Voltify customer analysis
 
-Data analysis project using BigQuery to uncover patterns in new vs. returning customer behavior for a small tech retailer. Includes cohort segmentation, product mix evolution, time-to-repeat-purchase analysis, return rate insights, and actionable recommendations.
+• **Tools**: SQL (BigQuery), Tableau for visualizations <br>
+• **Dataset**: 90K+ synthetic retail transactions<br>
+• **Methods**: Cohort segmentation, retention and repeat-purchase analysis, return rate analysis<br>
+• **Results**: Returning users (5% of base) drive 15% of revenue; a premium-first acquisition strategy could generate **+$152K annually for each 1% of customers converted to loyal**<br>
 
 <p align="center"><img width="600" alt="image" src="https://github.com/user-attachments/assets/6015ca94-1b50-42db-862c-e55031e249eb"></p>
                      
@@ -15,7 +18,7 @@ The goal of this analysis is to help Customer Insights & Retention Team to exami
 
 #### Key dimensions analyzed
 • Customer type: new vs. returning.<br>
-• Purchase stage: first (ond only) purchase of a one-time customer, first purchase and subsequent purchases of returning users.<br>
+• Purchase stage: first (and only) purchase of a one-time customer, first purchase and subsequent purchases of returning users.<br>
 • Product category: top-value items vs. all others.<br>
 • Order dates & intervals: registration to first purchase, first to second purchase.<br>
 • Operational KPIs: delivery time, shipping time.<br>
@@ -42,8 +45,8 @@ Users who become returning customers tend to start with slightly higher-priced p
 <img width="1000" alt="image" src="https://github.com/user-attachments/assets/2d6233a9-7c54-4b54-8682-848411b1bcf5" />
 
 #### <ins>Key recommendations</ins>:
-• **Premium-First Acquisition Strategy**: invest in targeted marketing highlighting premium offerings to attract high-value first-time buyers. While their initial premium adoption (29%) is only 13% higher than average buyers, these users show **3X greater premium spending acceleration** in subsequent purchases - driving 71% of loyalist spending to premium products. <br><br>
-• **Tiered Premium Loyalty Program**: implement tiered rewards for premium purchases to amplify the observed 70% premium share in later purchases. For exampple: free shipping ($400+ orders) → complimentary tech support (2+ premium items) → annual upgrade credits (3+ premium items)<br>
+• **Premium-First Acquisition Strategy**: invest in targeted marketing highlighting premium offerings to attract high-value first-time buyers. While their initial premium adoption (29%) is only 13% higher than average buyers, these users show 3X greater premium spending acceleration in subsequent purchases - driving 71% of loyalist spending to premium products. <br><br>
+• **Tiered Premium Loyalty Program**: implement tiered rewards for premium purchases to amplify the observed 70% premium share in later purchases. For example: free shipping ($400+ orders) → complimentary tech support (2+ premium items) → annual upgrade credits (3+ premium items)<br>
 
 ### Operational Performance Metrics: long decision cycles create remarketing opportunity; delivery speed is not a churn driver
 
@@ -53,7 +56,7 @@ We observe a notable delay between registration and the first purchase - 75 days
 #### First to second purchase
 For returning customers, the average time between the first and second purchase is 222 days, though 30% make their second purchase within 45 days and 50% within 110 days. This points to a clear opportunity for targeted marketing: focusing on first-time purchasers within the first 45–110 days could accelerate repeat buying, especially by promoting complementary or upgraded products.
 
-#### First to any subsequential purchase
+#### First to any subsequent purchase
 While our initial analysis focused specifically on the time to second purchase (avg 222 days), the cohort retention heatmap below reveals broader patterns in long-term customer engagement. It tracks what percentage of customers acquired in each quarter made at least one purchase in subsequent quarters, providing a complete view of loyalty development beyond just the first repeat transaction.
 
 <img width="1000" alt="image_2025-08-15_15-29-19" src="https://github.com/user-attachments/assets/751a34d7-bb52-4f76-8fa0-794da7852e5f" /><br>
@@ -91,10 +94,11 @@ This analysis reveals that Voltify's growth engine lies in its premium-loyalty f
 
 ### The path forward
 
-Focus 80% of retention efforts on premium product adoption through:
-• Financing options for $400+ products <br> 
-• Personalized onboarding for high-LTV signals<br>  
-• Tiered rewards for premium purchases <br>
+Focus 80% of retention efforts on premium product adoption through:<br>
+
+• Financing options for $400+ products <br>
+• Personalized onboarding for high-LTV signals<br>
+• Tiered rewards for premium purchases<br>
 
 Each 1% increase in loyalist conversion (from 5% to 6%) generates $152K in annual revenue through:
 → $130K core LTV from 240 additional loyalists
@@ -102,3 +106,5 @@ Each 1% increase in loyalist conversion (from 5% to 6%) generates $152K in annua
 → $9K in operational efficiencies (CAC savings + return reduction)
 
 **Calculated conservatively for a 24K-customer/year business using verified project metrics.**
+
+
