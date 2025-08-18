@@ -236,6 +236,6 @@ SELECT
   ROUND(AVG(usd_price), 2) AS avg_price_usd
  
 FROM ranked_orders 
-WHERE order_rank = 1  -- use "> 1" for 2nd+ orders of returning customers 
+WHERE order_rank = 1  -- use "> 1" for 2nd & subsequent orders
 GROUP BY 1
-ORDER BY total_price DESC;  -- Highest revenue products first
+ORDER BY avg_price_usd DESC;
