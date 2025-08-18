@@ -1,6 +1,6 @@
 /* 
 ══════════════════════════════════════
- QUERY 1: CUSTOMER SEGMENTATION 
+ QUERY 1: Customer segmentation 
 ══════════════════════════════════════
 */
 
@@ -55,7 +55,7 @@ GROUP BY 1;
 
 /* 
 ══════════════════════════════════════
- QUERY 2: CUSTOMER METRICS 
+ QUERY 2: Customer metrics 
 ══════════════════════════════════════
 */
 
@@ -108,3 +108,134 @@ FROM order_data od
 JOIN customer_classification cc 
   ON od.customer_id = cc.customer_id
 GROUP BY 1;
+
+/* 
+══════════════════════════════════════
+ QUERY 3: Product metrics by user type 
+══════════════════════════════════════
+*/
+
+/*
+VOLTIFY PRODUCT ANALYSIS: ONE-TIME CUSTOMERS | RETURNING CUSTIMERS
+Purpose: Analyze purchasing patterns by product and customer type:
+  - Items purchased
+  - Total revenue
+  - Average price
+
+Methodology:
+1. Create stable order IDs with null handling
+2. Identify one-time customers (single order only)
+3. Standardize product names
+4. Calculate metrics with efficient subqueries
+*/
+
+WITH order_data AS (
+  SELECT
+    -- Create unique order ID handling null timestamps
+    COALESCE(
+      CONCAT(customer_id, '_', CAST(purchase_ts AS STRING)),
+      CAST(customer_id AS STRING)
+    ) AS order_id,
+    customer_id,
+    product_name,
+    usd_price
+  FROM core.orders 
+),
+
+one_time_customers AS (
+  SELECT 
+    customer_id
+  FROM order_data
+  GROUP BY 1
+  HAVING COUNT(DISTINCT order_id) = 1  -- Single order customers
+),
+
+product_cleanup AS (
+  SELECT
+    -- Standardize product names
+    CASE 
+      WHEN LOWER(product_name) = '27in"" 4k gaming monitor' 
+        THEN '27in 4K gaming monitor'
+      ELSE product_name 
+    END AS clean_product_name,
+    usd_price,
+    customer_id
+  FROM order_data
+)
+
+SELECT
+  p.clean_product_name AS product_name,
+  COUNT(*) AS items_purchased,
+  ROUND(SUM(p.usd_price), 2) AS total_revenue,
+  ROUND(AVG(p.usd_price), 2) AS avg_price_usd
+FROM product_cleanup p
+WHERE p.customer_id IN (SELECT customer_id FROM one_time_customers) -- use "NOT IN" for filtering returning customer's stats 
+GROUP BY 1
+ORDER BY avg_price_usd DESC;
+
+/* 
+═════════════════════════════════════════════════════════════════
+ QUERY 4: Returning Users – First vs. Subsequent Purchase Metrics
+═════════════════════════════════════════════════════════════════
+*/
+
+/*
+VOLTIFY PURCHASE ANALYSIS: RETURNING USERS
+Purpose: Analyze first-purchase vs. subsequent purchase behavior of customers who become returning buyers
+*/
+
+WITH order_data AS (
+  SELECT
+    -- Create unique order ID handling null timestamps
+    COALESCE(
+      CONCAT(customer_id, '_', CAST(purchase_ts AS STRING)),
+      CAST(customer_id AS STRING)
+    ) AS order_id,
+    customer_id,
+    product_name,
+    usd_price
+  FROM core.orders 
+),
+
+one_time_customers AS (
+  SELECT 
+    customer_id
+  FROM order_data
+  GROUP BY 1
+  HAVING COUNT(DISTINCT order_id) = 1  -- Single order customers
+),
+
+-- Rank purchases for RETURNING customers only
+ranked_orders AS (
+  SELECT 
+    customer_id,
+    purchase_ts,
+    product_name,
+    usd_price,
+    -- DENSE_RANK ensures all items in same order get same rank
+    -- (Critical for multi-item orders)
+    DENSE_RANK() OVER (
+      PARTITION BY customer_id 
+      ORDER BY purchase_ts ASC
+    ) AS order_rank
+  FROM core.orders
+  WHERE customer_id NOT IN (SELECT customer_id FROM one_time_customers)
+)
+
+-- Final product metrics for first purchases
+SELECT
+  -- Standardize monitor naming
+  CASE 
+    WHEN product_name = '27in"" 4k gaming monitor' 
+      THEN '27in 4K gaming monitor' 
+    ELSE product_name 
+  END AS product_name,
+  
+  COUNT(product_name) AS items_purchased,
+  ROUND(SUM(usd_price), 2) AS total_price,
+  ROUND(AVG(usd_price), 2) AS avg_price_usd
+ 
+FROM ranked_orders 
+WHERE order_rank = 1  -- use "> 1" for 2nd+ orders of returning customers 
+GROUP BY 1
+ORDER BY total_price DESC;  -- Highest revenue products first
