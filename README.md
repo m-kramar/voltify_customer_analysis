@@ -45,7 +45,7 @@ Users who become returning customers tend to start with slightly higher-priced p
 <img width="1000" alt="image" src="https://github.com/user-attachments/assets/2d6233a9-7c54-4b54-8682-848411b1bcf5" />
 
 #### <ins>Key recommendations</ins>:
-• **Premium-First Acquisition Strategy**: invest in targeted marketing highlighting premium offerings to attract high-value first-time buyers. While their initial premium adoption (29%) is only 13% higher than average buyers, these users show 3X greater premium spending acceleration in subsequent purchases - driving 71% of loyalist spending to premium products. <br><br>
+• **Premium-First Acquisition Strategy**: invest in targeted marketing highlighting premium offerings to attract high-value first-time buyers. While their initial premium adoption (29%) is only 13% higher than average buyers, these users show 2.5X greater premium spending acceleration in subsequent purchases - driving 71% of loyalist spending to premium products. <br><br>
 • **Tiered Premium Loyalty Program**: implement tiered rewards for premium purchases to amplify the observed 70% premium share in later purchases. For example: free shipping ($400+ orders) → complimentary tech support (2+ premium items) → annual upgrade credits (3+ premium items)<br>
 
 ### Operational Performance Metrics: long decision cycles create remarketing opportunity; delivery speed is not a churn driver
@@ -57,7 +57,7 @@ We observe a notable delay between registration and the first purchase - 75 days
 For returning customers, the average time between the first and second purchase is 222 days, though 30% make their second purchase within 45 days and 50% within 110 days. This points to a clear opportunity for targeted marketing: focusing on first-time purchasers within the first 45–110 days could accelerate repeat buying, especially by promoting complementary or upgraded products.
 
 #### First to any subsequent purchase
-While our initial analysis focused specifically on the time to second purchase (avg 222 days), the cohort retention heatmap below reveals broader patterns in long-term customer engagement. It tracks what percentage of customers acquired in each quarter made at least one purchase in subsequent quarters, providing a complete view of loyalty development beyond just the first repeat transaction.
+While our initial analysis focused specifically on the time to second purchase, the cohort retention heatmap below reveals broader patterns in long-term customer engagement. It tracks what percentage of customers acquired in each quarter made at least one purchase in subsequent quarters, providing a complete view of loyalty development beyond just the first repeat transaction.
 
 <img width="1000" alt="image_2025-08-15_15-29-19" src="https://github.com/user-attachments/assets/751a34d7-bb52-4f76-8fa0-794da7852e5f" /><br>
 
@@ -68,8 +68,8 @@ Delivery and shipping performance is consistent across cohorts. The average deli
 
 #### <ins>Key recommendations</ins>:
 • **Points-for-Orders Loyalty Program**: introduce a simple program where every purchase earns redeemable points. Bonus multipliers on the 2nd and 3rd orders encourage customers to return, driving the average order count beyond 2.5 per returning user.<br><br>
-• **110-Day Loyalty Acceleration Program**: trigger personalized complementary product offers (e.g., "Macbook stand for your new laptop") between days 45-110 post-first-purchase.<br><br>
-• **First-Purchase Activation Program**: engage registered users who have not yet purchased with tailored product education, limited-time offers, and surveys to uncover purchase barriers. This reduces the 75–82 day lag to first order, accelerates revenue capture, and provides insights to refine onboarding and product positioning.<br>
+• **110-Day Loyalty Acceleration Program**: trigger personalized complementary product offers (e.g., "Macbook stand for your new laptop") before day 110 post-first-purchase.<br><br>
+• **First-Purchase Activation Program**: engage registered users who have not yet purchased with tailored product education, limited-time offers, and surveys to uncover purchase barriers. This reduces the 75-82 day lag to first order, accelerates revenue capture, and provides insights to refine onboarding and product positioning.<br>
 
 ### Return Rate Analysis: loyal customers are less likely to return purchased products
 
@@ -77,11 +77,11 @@ The return rate differs notably between new and returning customers - 5.2% vs. 3
 
 <img width="1000" alt="image" src="https://github.com/user-attachments/assets/34111262-6a3f-4850-922e-8fbed4ed0ce6">
 
-Our data shows that high-priced products tend to have higher return rates across both cohorts. For example, MacBook Air shows ~11% returns in both cohorts, ThinkPad Laptop declines from 12% (new) to 7% (returning). A notable exception is iPhone, which rises from 7% (new) to 11% (returning). Interestingly, returning customers exhibit lower return rates than new customers for nearly all categories, with two exceptions: Apple iPhone and Samsung Charging Cable Pack, where their rates slightly exceed those of new buyers.
+Our data shows that high-priced products tend to have higher return rates across both cohorts. For example, MacBook Air shows ~11% returns in both cohorts, ThinkPad Laptop declines from 12% (new) to 7% (returning). Interestingly, returning customers exhibit lower return rates than new customers for nearly all categories, with two exceptions: Apple iPhone and Samsung Charging Cable Pack, where their rates exceed those of new buyers.
 
-The primary working hypothesis is that expensive purchases trigger regret in some customers, prompting returns. One potential countermeasure is offering an installment payment program, which could reduce perceived financial risk and lower return rates for high-ticket items.
+For now, the primary working hypothesis is that expensive purchases trigger regret in some customers, prompting returns. One potential countermeasure is offering an installment payment program, which could reduce perceived financial risk and lower return rates for high-ticket items.
 
-Our main focus should be on reducing the return rate among new customers, because, as we see, most of the cost of returns corresponds to this cohort (due to higher order volumes and, in some cases, higher return rates). Specifically, we should focus on MacBook Air laptops and gaming monitors.
+Our main focus should be on reducing the return rate among new customers, because, as we see, most of the cost of returns corresponds to this cohort (due to higher order volumes and, in most cases, higher return rates). Specifically, we should focus on MacBook Air laptops and gaming monitors.
 
 #### <ins>Key recommendations</ins>:
 • **Laptop Return Reduction**: for both laptops (highest return categories) offer pre-purchase comparison guides, live demos, and extended trial options to better align expectations with product experience.<br><br>
@@ -90,7 +90,7 @@ Our main focus should be on reducing the return rate among new customers, becaus
 
 ## Growth opportunities
 
-This analysis reveals that Voltify's growth engine lies in its premium-loyalty flywheel: customers starting with $400+ purchases show 3X acceleration in premium adoption, generating 70% of loyalist revenue. By reducing the 75-day consideration window and activating the 45-110 day loyalty catalyst window, we can transform Voltify's greatest operational challenge - long decision cycles - into its most powerful competitive advantage.
+This analysis reveals that Voltify's growth engine lies in its premium-loyalty flywheel: customers starting with $400+ purchases show 2.5X acceleration in premium adoption, generating 70% of loyalist revenue. By reducing the 75-day consideration window and activating the 45-110 day loyalty catalyst window, we can transform Voltify's greatest operational challenge - long decision cycles - into its most powerful competitive advantage.
 
 ### The path forward
 
@@ -100,9 +100,9 @@ Focus 80% of retention efforts on premium product adoption through:<br>
 • Personalized onboarding for high-LTV signals<br>
 • Tiered rewards for premium purchases<br>
 
-Each 1% increase in loyalist conversion (from 5% to 6%) generates $152K in annual revenue through:
+Just 1% increase in loyalist conversion (from 5% to 6%) generates $152K in annual revenue through:
 → $130K core LTV from 240 additional loyalists
-→ $13K from accelerated premium adoption (observed 3X pattern)
+→ $13K from accelerated premium adoption (observed 2.5X pattern)
 → $9K in operational efficiencies (CAC savings + return reduction)
 
 **Calculated conservatively for a 24K-customer/year business using verified project metrics.**
