@@ -116,7 +116,6 @@ GROUP BY 1;
 */
 
 /*
-VOLTIFY PRODUCT ANALYSIS: ONE-TIME CUSTOMERS | RETURNING CUSTIMERS
 Purpose: Analyze purchasing patterns by product and customer type:
   - Items purchased
   - Total revenue
@@ -180,8 +179,19 @@ ORDER BY avg_price_usd DESC;
 */
 
 /*
-VOLTIFY PURCHASE ANALYSIS: RETURNING USERS
 Purpose: Analyze first-purchase vs. subsequent purchase behavior of customers who become returning buyers
+
+Methodology:
+1. Create stable order IDs with comprehensive null timestamp handling using COALESCE
+2. Identify one-time customers (single order only) for exclusion from returning customer analysis
+3. Rank all purchases chronologically for returning customers using DENSE_RANK
+   (ensures all items in same order receive same rank, critical for multi-item orders)
+4. Filter to include only first purchases (order_rank = 1) for returning customers
+5. Standardize product naming conventions (specifically monitor naming)
+6. Calculate product-level metrics:
+   - Count of items purchased
+   - Total revenue generated
+   - Average price per product
 */
 
 WITH order_data AS (
